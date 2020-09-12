@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
-const PORT = 3000;
+const PORT = 5000;
 mongoose
   .connect(config.mongoURI, {
     useNewUrlParser: true,
@@ -26,8 +26,8 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-app.get("/", (req, res) => {
-  res.send("Hello World!!");
+app.get("/api", (req, res) => {
+  res.send("Hello World!!!");
 });
 
 app.post("/api/users/register", (req, res) => {
